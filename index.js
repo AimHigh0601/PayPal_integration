@@ -110,5 +110,10 @@ app.post('/pay', function (req, res) {
   app.get('/cancel', (req, res) => res.send('Cancelled'))
 })
 
-app.listen(8080)
-console.log('Server is listening on port 8080')
+// Port Setup...
+const port = process.env.PORT || 8080
+
+// Start Server...
+app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+});
