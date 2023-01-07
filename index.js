@@ -77,8 +77,9 @@ app.post('/pay', function (req, res) {
       }
     }
   })
+})
 
-  app.get('/success', (req, res) => {
+app.get('/success', (req, res) => {
     const payerId = req.query.PayerID
     const paymentId = req.query.paymentId
 
@@ -106,10 +107,9 @@ app.post('/pay', function (req, res) {
         res.send('Success')
       }
     })
-  })
-
-  app.get('/cancel', (req, res) => res.send('Cancelled'))
 })
+
+app.get('/cancel', (req, res) => res.render('pages/index'));
 
 app.post('/pay-batch', async function (req, res) {
   const data = req.body
