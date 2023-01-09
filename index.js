@@ -104,7 +104,7 @@ app.get('/success', (req, res) => {
         throw error
       } else {
         console.log(JSON.stringify(payment))
-        res.send('Success')
+        res.render('pages/index')
       }
     })
 })
